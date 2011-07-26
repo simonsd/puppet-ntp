@@ -1,9 +1,10 @@
 import 'packages.pp'
 import 'config.pp'
-import 'services.pp'
+import 'define.pp'
 
 class ntp {
 	include ntp::packages
 	include ntp::config
-	include ntp::services
+
+	Class['ntp::packages'] -> Class['ntp::config']
 }
