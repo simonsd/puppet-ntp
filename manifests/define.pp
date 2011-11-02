@@ -31,7 +31,7 @@ define ntp_client (
 	cron {
 		'ntp cron':
 			ensure => $ntp_cron,
-			command => 'ntpd -q',
+			command => '/usr/sbin/ntpd -q',
 			user => root,
 			hour => '*/2';
 	}
